@@ -1,10 +1,10 @@
-package com.example.parkease;
+package com.parkease.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ParkeaseApplicationTests {
+class ParkeaseBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
