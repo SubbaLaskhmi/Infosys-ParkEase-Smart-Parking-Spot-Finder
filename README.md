@@ -1,329 +1,335 @@
-# ParkEase - Smart Parking Spot Finder
+# 🅿️ ParkEase - Smart Parking Management System
 
-A comprehensive smart parking solution with separate panels for Drivers, Parking Providers, and Administrators. Built with React Native (Expo) for the frontend and Node.js/Express/MongoDB for the backend.
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red)]()
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.2-brightgreen)]()
+[![React](https://img.shields.io/badge/React-19.2.0-blue)]()  
+[![MongoDB](https://img.shields.io/badge/MongoDB-Latest-green)]()
 
-## 🚀 Features
+> **A modern, full-stack parking management solution with real-time availability, integrated payments, and QR-based check-in.**
 
-### Driver Panel
-- 🗺️ Interactive map view with parking spot markers
-- 🔍 Search and filter parking locations
-- ⚡ Real-time EV charging station status
-- 💳 Integrated wallet system
-- 📱 QR code-based check-in/check-out
-- 📍 Saved places functionality
-- 📊 Booking history and management
-- 🚗 Vehicle management
+---
 
-### Provider Panel
-- 📍 Manage multiple parking locations
-- 🔌 EV charging station management
-- 💰 Earnings and revenue tracking
-- 📊 Real-time slot availability
-- 🔔 Booking notifications
-- ⚙️ Business settings and verification
-- 📈 Performance analytics
+## 🌟 Features
 
-### Admin Panel
-- 👥 User management (Drivers & Providers)
-- 📊 Dashboard with statistics
-- 🔍 Detailed user and provider information
-- ⚠️ Suspend/activate accounts
-- 📈 System-wide analytics
-- 🚗 Vehicle and EV station oversight
+### For Drivers (Users)
 
-## 📁 Project Structure
+- 🗺️ **Interactive Map Search** - Find available parking spots on an interactive Leaflet map
+- 🎯 **Smart Filtering** - Filter by price, distance, EV charging availability
+- 💳 **Seamless Booking** - One-click booking with integrated payment modal
+- 📱 **QR Ticket Generation** - Instant downloadable QR code tickets after booking
+- ⭐ **Favorites** - Save frequently used parking spots  
+- 🔔 **Real-Time Notifications** - Toast alerts for all actions
+- 💼 **Wallet Integration** - Manage wallet balance and transactions  
 
-```
-ParkEase/
-├── frontend/                  # React Native (Expo) application
-│   ├── src/
-│   │   ├── components/       # Reusable components
-│   │   ├── screens/          # Screen components
-│   │   ├── navigation/       # Navigation configuration
-│   │   ├── services/         # API service layer
-│   │   ├── constants/        # Constants (colors, etc.)
-│   │   └── utils/            # Utility functions
-│   ├── App.js               # Main app component
-│   ├── index.js             # Entry point
-│   ├── package.json         # Frontend dependencies
-│   └── README.md            # Frontend documentation
-│
-├── backend-nodejs/           # Node.js/Express API (Recommended)
-│   ├── models/              # Database models
-│   │   ├── User.js
-│   │   ├── ParkingLot.js
-│   │   └── Booking.js
-│   ├── routes/              # API routes
-│   │   ├── auth.js
-│   │   ├── parking.js
-│   │   ├── booking.js
-│   │   ├── user.js
-│   │   ├── ev.js
-│   │   └── admin.js
-│   ├── middleware/          # Authentication middleware
-│   │   └── auth.js
-│   ├── server.js           # Main server file
-│   ├── package.json        # Backend dependencies
-│   ├── .env                # Environment variables
-│   └── README.md           # Backend documentation
-│
-├── backend/                 # Java Spring Boot backend (Alternative)
-│   └── (Spring Boot structure)
-│
-├── ARCHITECTURE.md          # System architecture
-├── BACKEND_OPTIONS.md       # Backend comparison guide
-├── INTEGRATION_GUIDE.md     # Integration instructions
-├── INTEGRATION_SUMMARY.md   # Feature summary
-├── QUICK_START.md          # Quick setup guide
-├── start.bat               # Windows startup script
-└── README.md               # This file
-```
+### For Providers
 
-## 🛠️ Tech Stack
+- ➕ **Add Parking Listings** - Create new parking spots with details
+- 📊 **Dashboard Analytics** - View bookings, revenue, and statistics
+- 🔍 **QR Scanner** - Scan booking QR codes for check-in
+- 📈 **Booking Management** - Track all bookings in real-time
+- ✅ **Status Updates** - Update parking availability and booking status
+
+### For Admins  
+
+- 🛡️ **Approval Workflow** - Review and approve new parking listings
+- 🚦 **Status Management** - Control (approve/reject) parking spot listings
+- 👥 **User Management** - Manage drivers and providers
+- 📊 **System Analytics** - Comprehensive charts and statistics
+
+---
+
+## 🏗️ Tech Stack
 
 ### Frontend
-- **React Native** (Expo)
-- **React Navigation** - Navigation
-- **React Native Maps** - Map integration
-- **Expo Linear Gradient** - UI enhancements
-- **Expo Vector Icons** - Icons
-- **axios** - HTTP client
-- **AsyncStorage** - Token persistence
+
+- **React 19.2** - Modern UI with Hooks and Context API
+- **Vite** - Lightning-fast build tool
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+- **Leaflet & React-Leaflet** - Interactive maps
+- **Axios** - HTTP client
+- **Socket.IO Client** - Real-time updates
+- **QRCode.React** - QR code generation
+- **Recharts** - Beautiful charts for analytics
 
 ### Backend
-- **Node.js** - Runtime
-- **Express.js** - Web framework
-- **MongoDB** - Database
-- **Mongoose** - ODM
-- **JWT** - Authentication
-- **bcryptjs** - Password hashing
-- **CORS** - Cross-origin resource sharing
 
-## 📋 Prerequisites
+- **Spring Boot 3.2.2** - Robust Java framework
+- **Spring Security** - JWT-based authentication
+- **MongoDB** - NoSQL database
+- **Maven** - Dependency management
+- **WebSocket** - Real-time communication
+- **JWT (io.jsonwebtoken)** - Secure token generation
 
-- Node.js (v14 or higher)
-- npm or yarn
-- MongoDB (v4.4 or higher)
-- Expo CLI (for mobile development)
+### DevOps & Deployment
 
-## 🔧 Installation
+- **Docker** - Containerization (config included)
+- **Render** - Cloud deployment (render.yaml included)
+- **Git** - Version control
 
-### 1. Clone the Repository
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Java 17+** (for backend)
+- **Node.js 18+** (for frontend)
+- **MongoDB** (local or Atlas)
+- **Maven** (for backend build)
+
+### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/SubbaLaskhmi/Infosys-ParkEase-Smart-Parking-Spot-Finder.git
-cd Infosys-ParkEase-Smart-Parking-Spot-Finder
+git clone https://github.com/your-username/parkease.git
+cd parkease
 ```
 
-### 2. Install Frontend Dependencies
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+
+# Configure application.properties
+# Update the following in src/main/resources/application.properties:
+# - spring.data.mongodb.uri=your_mongodb_connection_string
+# - parkease.app.jwtSecret=your_secret_key
+
+# Build and run
+mvn clean install
+mvn spring-boot:run
+```
+
+Backend will start on **<http://localhost:5002>**
+
+### 3️⃣ Frontend Setup
 
 ```bash
 cd frontend
+
+# Install dependencies
 npm install
-cd ..
-```
 
-### 3. Install Backend Dependencies
+# Configure environment variables
+# Create .env file:
+VITE_API_URL=http://localhost:5002/api
 
-```bash
-cd backend-nodejs
-npm install
-cd ..
-```
-
-### 4. Configure Environment Variables
-
-The `.env` file in the `backend-nodejs` directory is already configured. Update if needed:
-
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/parkease
-JWT_SECRET=your_secret_key_here
-NODE_ENV=development
-```
-
-## 🚀 Running the Application
-
-### Quick Start (Windows)
-
-```bash
-# Double-click or run:
-start.bat
-```
-
-This will automatically:
-1. Start MongoDB
-2. Start the backend server
-3. Start the frontend application
-
-### Manual Start
-
-**Terminal 1 - MongoDB:**
-```bash
-mongod
-```
-
-**Terminal 2 - Backend:**
-```bash
-cd backend-nodejs
+# Run development server
 npm run dev
 ```
 
-**Terminal 3 - Frontend:**
-```bash
-cd frontend
-npm start
+Frontend will start on **<http://localhost:5173>**
+
+---
+
+## 📂 Project Structure
+
+```
+parkease/
+├── backend/                 # Spring Boot backend
+│   ├── src/main/java/
+│   │   └── com/parkease/
+│   │       ├── controller/  # REST API endpoints
+│   │       ├── model/       # MongoDB models
+│   │       ├── service/     # Business logic
+│   │       ├── security/    # JWT & Spring Security config
+│   │       ├── dto/         # Data transfer objects
+│   │       └── repository/  # MongoDB repositories
+│   └── src/main/resources/
+│       └── application.properties
+│
+├── frontend/                # React frontend
+│   ├── src/
+│   │   ├── pages/           # Main app pages
+│   │   ├── components/      # Reusable components
+│   │   ├── context/         # React Context providers
+│   │   ├── dashboards/      # Role-specific dashboards
+│   │   └── styles/          # CSS and Tailwind config
+│   └── public/
+│
+├── docker-compose.yml       # Docker setup
+├── render.yaml              # Render deployment config
+└── README.md                # You are here!
 ```
 
-### Access Points
+---
 
-- **Backend API**: http://localhost:5000
-- **Frontend**: Follow Expo instructions
-  - Press `w` for web browser
-  - Press `a` for Android emulator
-  - Press `i` for iOS simulator
-  - Scan QR code with Expo Go app
+## 🔑 Demo Credentials
 
-## 📱 Mobile Testing
+Use these credentials to test the application:
 
-### For Physical Device:
+| Role | Email | Password | Features |
+|------|-------|----------|----------|
+| **Admin** | `admin@parkease.com` | `admin123` | Approve listings, Manage users |
+| **Provider** | `owner@parkease.com` | `owner123` | Add parking, Scan QR, View Revenue |
+| **Driver** | `user@parkease.com` | `user123` | Book spots, Pay, Withdrawal |
 
-1. Install **Expo Go** app from Play Store/App Store
-2. Find your computer's IP address:
-   ```bash
-   # Windows
-   ipconfig
-   ```
-3. Update `API_BASE_URL` in `frontend/src/services/api.js`:
-   ```javascript
-   const API_BASE_URL = 'http://YOUR_IP_ADDRESS:5000/api';
-   ```
-4. Scan QR code from Expo with Expo Go app
+---
 
-## 📚 API Documentation
+## 🚦 Features Overview
 
-### Base URL
-```
-http://localhost:5000/api
-```
+### 🚗 For Drivers
 
-### Endpoints Summary
+- **Interactive Map**: Dark-themed Leaflet map with "Magic Sort" validation.
+- **Booking & Payment**: Seamless flow from selection to payment (simulated).
+- **Wallet**: Add funds and **Withdraw** balance (New!).
+- **QR Tickets**: Instant access to booking QR codes.
 
-- **Authentication** (3 endpoints)
-  - POST `/api/auth/register`
-  - POST `/api/auth/login`
-  - GET `/api/auth/verify`
+### 🏢 For Providers (Space Owners)
 
-- **Parking** (6 endpoints)
-  - GET `/api/parking`
-  - POST `/api/parking`
-  - GET `/api/parking/:id`
-  - PUT `/api/parking/:id`
-  - DELETE `/api/parking/:id`
-  - GET `/api/parking/provider/:providerId`
+- **Manage Listings**: Add, Edit, and Delete parking spots.
+- **Real-time Dashboard**: Track active bookings and revenue.
+- **Withdrawal**: Request payout of earnings directly from the wallet.
 
-- **Bookings** (6 endpoints)
-  - POST `/api/bookings`
-  - GET `/api/bookings/user/:userId`
-  - GET `/api/bookings/:id`
-  - PATCH `/api/bookings/:id/status`
-  - POST `/api/bookings/:id/checkin`
-  - POST `/api/bookings/:id/checkout`
+### 🛡️ For Admins
 
-- **Users** (8 endpoints)
-- **EV Charging** (5 endpoints)
-- **Admin** (8 endpoints)
+- **Verification**: Approve or Reject new parking listings.
+- **Oversight**: View all users and system statistics.
 
-**Total: 36 API Endpoints**
+---
 
-For detailed API documentation, see `backend/README.md`
+## 🎨 Key Components
 
-## 🔗 Integration
+### Frontend Components
 
-The frontend and backend are connected through a comprehensive API service layer.
+- **`QRGenerator.jsx`** - Generates booking QR tickets with download/share
+- **`PaymentModal.jsx`** - Handles payment flow (simulated)
+- **`BookingDrawer.jsx`** - Bottom drawer for booking confirmation
+- **`NavigationOverlay.jsx`** - Map navigation controls
+- **`ErrorBoundary.jsx`** - Production-ready error handling
+- **`AIChatbot.jsx`** - AI assistant for parking search
 
-See `INTEGRATION_GUIDE.md` for:
-- API integration examples
-- Token management
-- Error handling
-- Testing instructions
+### Backend Controllers
 
-## 📖 Documentation
+- **`AuthController`** - User authentication
+- **`ParkingController`** - Parking CRUD operations
+- **`BookingController`** - Booking management
+- **`ProviderController`** - Provider-specific operations
+- **`AdminController`** - Admin operations
 
-- **QUICK_START.md** - Quick setup guide
-- **BACKEND_OPTIONS.md** - Backend comparison (Node.js vs Java)
-- **INTEGRATION_GUIDE.md** - Frontend-backend integration
-- **ARCHITECTURE.md** - System architecture diagrams
-- **INTEGRATION_SUMMARY.md** - Complete feature summary
-- **frontend/README.md** - Frontend documentation
-- **backend-nodejs/README.md** - Node.js API documentation
+---
 
-## 🔐 Security Features
+## 💡 Usage Guide
 
-- JWT-based authentication
-- Password hashing with bcrypt
-- Role-based access control (Driver, Provider, Admin)
-- Protected API endpoints
-- Token expiration and refresh
+### For Drivers
+
+1. **Register** → Login
+2. **Search** parking spots on the map
+3. **Select** a spot → View details
+4. **Book Now** → Complete payment
+5. **Download QR Ticket** → Present at parking location
+
+### For Providers
+
+1. **Register** as PROVIDER
+2. **Add Parking** listing with details
+3. Wait for **admin approval**
+4. **Scan booking QR codes** for check-in
+5. **View analytics** on dashboard
+
+### For Admins
+
+1. Login as ADMIN
+2. **Review pending** parking listings
+3. **Approve/Reject** listings
+4. **Monitor system** analytics
+
+---
 
 ## 🧪 Testing
 
-### Test Backend Health
+### Backend
 
 ```bash
-curl http://localhost:5000/api/health
+mvn test
 ```
 
-### Create Test Users
+### Frontend
 
-See `QUICK_START.md` for examples of creating test accounts for each role.
-
-## 🐛 Troubleshooting
-
-### MongoDB Connection Error
 ```bash
-# Start MongoDB service
-net start MongoDB
+npm run test
 ```
 
-### Port Already in Use
+### Manual Testing Checklist
+
+- [ ] User registration and login
+- [ ] Parking search and filtering
+- [ ] Booking flow with payment
+- [ ] QR code generation and download
+- [ ] Provider adding parking spots
+- [ ] Admin approval workflow
+- [ ] QR code scanning
+
+---
+
+## 🚢 Deployment
+
+### Docker Deployment
+
 ```bash
-# Find and kill process on port 5000
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
+docker-compose up --build
 ```
 
-### Cannot Connect from Mobile
-- Ensure both devices are on same WiFi
-- Use computer's IP address instead of localhost
-- Check firewall settings
+### Cloud Deployment (Render)
 
-For more troubleshooting, see `QUICK_START.md`
+1. Push code to GitHub
+2. Connect repository to Render
+3. Deploy using `render.yaml` configuration
+4. Set environment variables in Render dashboard
 
-## 📝 License
+### Environment Variables (Production)
 
-ISC
+```env
+# Backend
+MONGODB_URI=your_production_mongodb_uri
+JWT_SECRET=your_strong_secret_key
+JWT_EXPIRATION_MS=86400000
 
-## 👥 Contributors
+# Frontend
+VITE_API_URL=https://your-backend-url.com/api
+```
 
-- Mayank Shrivastava
-- SubbaLaskhmi
+---
 
 ## 🤝 Contributing
 
+We welcome contributions! Please follow these steps:
+
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📧 Support
+---
 
-For questions or issues:
-- Check the documentation files
-- Review the troubleshooting section
-- Open an issue on GitHub
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Built with ❤️ for Infosys Springboard Internship**
+## 👨‍💻 Author
+
+**Your Name**  
+
+- GitHub: [@your-username](https://github.com/your-username)
+- LinkedIn: [Your Profile](https://linkedin.com/in/your-profile)
+
+---
+
+## 🙏 Acknowledgments
+
+- Leaflet for amazing map integration
+- Spring Boot community for excellent documentation
+- React ecosystem for powerful tools and libraries
+
+---
+
+## 📞 Support
+
+For support, email <your-email@example.com> or open an issue on GitHub.
+
+---
+
+**Made with ❤️ for hassle-free parking management**

@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://json.schemastore.org/render.yaml
+services:
+  - type: web
+    name: parkease-backend
+    env: docker
+    region: singapore
+    plan: free
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 5000
+
+  - type: web
+    name: parkease-frontend
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run preview
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: parkease-backend
+          property: url
